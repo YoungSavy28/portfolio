@@ -49,3 +49,166 @@ footer{
      background: #FFCAD4;
 background: linear-gradient(90deg, rgba(255, 202, 212, 1) 0%, rgba(126, 63, 242, 1) 100%);
 }
+/* Keep your existing styles up top... then paste this at the bottom */
+
+body {
+  transition: all 0.6s ease;
+}
+
+button, .btn {
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+button:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes trailFadeJS {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes fall {
+  0% { top: -50px; opacity: 1; }
+  100% { top: 100vh; opacity: 0; }
+}
+
+/* Scroll Progress Bar */
+#scrollBarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+#scrollBar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+  width: 0%;
+}
+
+/* Custom cursor */
+body {
+  cursor: crosshair;
+}
+
+/* Glowing nav-brand on hover */
+.navbar-brand:hover {
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+/* AI Icon */
+#aiIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #662D8C;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* AI Panel Chat */
+#aiPanel {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  max-height: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+#aiHeader {
+  background: #662D8C;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#aiClose {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#aiBody {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+}
+
+.ai-msg {
+  padding: 8px 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+.ai-msg-bot {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+.ai-msg-user {
+  background: #e0d3f8;
+  align-self: flex-end;
+  text-align: right;
+}
+
+#aiFooter {
+  padding: 8px;
+  border-top: 1px solid #ddd;
+}
+
+#aiInput {
+  width: 100%;
+  padding: 7px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+/* Dev Terminal */
+#devTerminal {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: rgba(0,0,0,0.95);
+  color: #00ff91;
+  font-family: monospace;
+  font-size: 0.95rem;
+  padding: 1rem;
+  z-index: 9999;
+  transition: bottom 0.7s ease;
+  overflow-y: auto;
+  border-top: 3px solid #0f0;
+}
+#devTerminal.active {
+  bottom: 0;
+}
+#terminalText {
+  white-space: pre-wrap;
+}
