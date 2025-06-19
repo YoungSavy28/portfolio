@@ -1,6 +1,6 @@
 // Smooth Scroll
 document.querySelectorAll('a.nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function (e) {
     if (this.hash !== '') {
       e.preventDefault();
       const target = document.querySelector(this.hash);
@@ -23,7 +23,6 @@ function typeWriter() {
 window.addEventListener('load', () => {
   introText.innerHTML = '';
   setTimeout(typeWriter, 300);
-
   document.querySelector('#navbar').style.opacity = 0;
   setTimeout(() => {
     document.querySelector('#navbar').style.transition = 'opacity 1s ease';
@@ -31,7 +30,7 @@ window.addEventListener('load', () => {
   }, 800);
 });
 
-// Parallax scroll effect and scroll bar
+// Parallax scroll + scroll bar
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   const firstPart = document.getElementById('firstpart');
@@ -43,7 +42,7 @@ window.addEventListener('scroll', () => {
   document.getElementById("scrollBar").style.width = scrolledPercent + "%";
 });
 
-// Section and card animation on scroll
+// Animate sections and cards
 const elements = document.querySelectorAll('section, .card, .about-section');
 const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
@@ -79,7 +78,6 @@ document.querySelectorAll('.card').forEach(card => {
 document.querySelectorAll('a.btn, button.btn').forEach(button => {
   button.style.position = 'relative';
   button.style.overflow = 'hidden';
-
   button.addEventListener('mouseenter', function (e) {
     const trail = document.createElement('span');
     trail.style.position = 'absolute';
@@ -96,7 +94,7 @@ document.querySelectorAll('a.btn, button.btn').forEach(button => {
   });
 });
 
-// Emoji rain on About section
+// Emoji rain in about section
 const aboutSection = document.getElementById("secondPart");
 const emojiRain = () => {
   const emojis = ['💻', '⚾', '🎮', '🔥'];
@@ -154,11 +152,14 @@ aiInput?.addEventListener('keydown', (e) => {
     }, 500);
   }
 });
-// === Xavier Easter Egg Sequence Trigger ===
+
+// Easter Egg Sequence — Trigger terminal (not while typing)
 let xavierKeys = [];
 const xavierCode = ['x', 'a', 'v', 'i', 'e', 'r'];
-
 window.addEventListener('keydown', (e) => {
+  const active = document.activeElement;
+  if (active.tagName === "INPUT" || active.tagName === "TEXTAREA") return;
+
   xavierKeys.push(e.key.toLowerCase());
   if (xavierKeys.slice(-6).toString() === xavierCode.toString()) {
     activateDevTerminal();
@@ -166,17 +167,18 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// === Unlock Button Activation ===
+// Button click unlock
 document.getElementById('unlockDevBtn')?.addEventListener('click', () => {
   activateDevTerminal();
 });
 
-// === Dev Terminal Logic ===
+// Dev Terminal Logic
 let commandBuffer = "";
-
 function activateDevTerminal() {
   const terminal = document.getElementById('devTerminal');
   const terminalText = document.getElementById('terminalText');
+  const inputFix = document.getElementById('terminalInputFix');
+
   terminal.classList.add('active');
   commandBuffer = "";
   terminalText.innerHTML =
@@ -186,9 +188,14 @@ function activateDevTerminal() {
     "- <code>projects</code><br>" +
     "- <code>clear</code><br>" +
     "- <code>exit</code><br><br>> ";
-}
 
-// Typing interaction inside terminal
+  inputFix.focus();
+}
+document.getElementById('devTerminal')?.addEventListener('click', () => {
+  document.getElementById('terminalInputFix')?.focus();
+});
+
+// Terminal typing input
 document.addEventListener('keydown', (e) => {
   const terminal = document.getElementById('devTerminal');
   const terminalText = document.getElementById('terminalText');
@@ -219,7 +226,6 @@ function updateTerminalLine() {
   terminalText.innerHTML = lines.join("<br>");
 }
 
-// Command handler
 function runCommand(cmd) {
   const terminalText = document.getElementById("terminalText");
 
@@ -249,3 +255,18 @@ function runCommand(cmd) {
       terminalText.innerHTML += `Unknown command: <code>${cmd}</code><br>> `;
   }
 }
+const musicToggle = document.getElementById("musicToggle");
+const bgMusic = document.getElementById("bgMusic");
+let musicPlaying = false;
+
+musicToggle.addEventListener("click", () => {
+  if (!musicPlaying) {
+    bgMusic.play();
+    musicToggle.innerText = "⏸️ Pause My Vibe";
+    musicPlaying = true;
+  } else {
+    bgMusic.pause();
+    musicToggle.innerText = "🎵 Play My Vibe";
+    musicPlaying = false;
+  }
+});

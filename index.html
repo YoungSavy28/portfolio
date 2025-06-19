@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xavier Cabrera</title>
+    <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +42,17 @@
           <div class="col-md-6 d-flex flex-column justify-content-center">
             <h1 class="fw-bold">Hello! Im <span id="name">Xavier</span></h1>
             <h2>Welcome to my portfolio!</h2>
+             <button id="musicToggle" class="btn btn-light mt-3">
+    🎵 Play My Vibe
+  </button>
+
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="./amanace.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+            
           </div>
-          <div class="col-md-6 text-center">
+          <div class="col-md-6 text-center pb-1">
             <img src="./crop.png" class="img-fluid rounded-4" alt="Graduation Photo">
           </div>
         </div>
@@ -495,6 +505,8 @@
 <!-- Dev Terminal Easter Egg (DEVGOD Unlock) -->
 <div id="devTerminal">
   <pre id="terminalText"><span class="cursor">█</span></pre>
+  <input type="text" id="terminalInputFix" style="position:absolute; opacity:0; height:1px; width:1px; z-index:-1;" />
+
 </div>
 
      
