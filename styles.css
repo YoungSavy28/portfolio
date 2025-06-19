@@ -189,26 +189,73 @@ body {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
-/* Dev Terminal */
 #devTerminal {
   position: fixed;
   bottom: -100%;
   left: 0;
   width: 100%;
-  height: 40vh;
-  background: rgba(0,0,0,0.95);
+  height: 45vh;
+  background: #000;
   color: #00ff91;
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 0.95rem;
   padding: 1rem;
   z-index: 9999;
   transition: bottom 0.7s ease;
   overflow-y: auto;
-  border-top: 3px solid #0f0;
+  border-top: 3px solid #00ff91;
+  box-shadow: 0 0 20px #00ff91 inset;
 }
+
 #devTerminal.active {
   bottom: 0;
 }
+
 #terminalText {
   white-space: pre-wrap;
+  overflow-y: auto;
 }
+
+/* Blinking green cursor */
+.cursor {
+  animation: blink 0.8s infinite;
+  color: #00ff91;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+#easterEggHint {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#easterEggHint p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+#unlockDevBtn {
+  font-family: 'Inter', sans-serif;
+  border-radius: 30px;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#unlockDevBtn:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
+#easterEggHint{
+    background: #FFCAD4;
+background: linear-gradient(90deg, rgba(255, 202, 212, 1) 0%, rgba(126, 63, 242, 1) 100%);
+}
+

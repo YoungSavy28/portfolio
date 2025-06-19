@@ -31,20 +31,19 @@ window.addEventListener('load', () => {
   }, 800);
 });
 
-// Parallax scroll effect
+// Parallax scroll effect and scroll bar
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   const firstPart = document.getElementById('firstpart');
   if (firstPart) firstPart.style.backgroundPosition = `center ${scrolled * 0.4}px`;
 
-  // Scroll progress bar
   const winScroll = document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolledPercent = (winScroll / height) * 100;
   document.getElementById("scrollBar").style.width = scrolledPercent + "%";
 });
 
-// Section + card reveal animation
+// Section and card animation on scroll
 const elements = document.querySelectorAll('section, .card, .about-section');
 const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
@@ -117,33 +116,20 @@ aboutSection.addEventListener("mouseenter", () => {
   aboutSection.addEventListener("mouseleave", () => clearInterval(interval), { once: true });
 });
 
-// Konami Code Easter Egg
-let inputKeys = [];
-const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-window.addEventListener('keydown', e => {
-  inputKeys.push(e.key);
-  if (inputKeys.toString().includes(konami.toString())) {
-    alert('🧠 Dev Mode Activated!');
-    document.body.style.filter = 'invert(1)';
-    inputKeys = [];
-  }
-});
-// Show chat panel
+// AI Chat Panel
 const aiIcon = document.getElementById('aiIcon');
 const aiPanel = document.getElementById('aiPanel');
 const aiClose = document.getElementById('aiClose');
 const aiInput = document.getElementById('aiInput');
 const aiBody = document.getElementById('aiBody');
 
-aiIcon.addEventListener('click', () => {
+aiIcon?.addEventListener('click', () => {
   aiPanel.style.display = 'flex';
 });
-
-aiClose.addEventListener('click', () => {
+aiClose?.addEventListener('click', () => {
   aiPanel.style.display = 'none';
 });
-
-aiInput.addEventListener('keydown', (e) => {
+aiInput?.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && aiInput.value.trim() !== "") {
     const userMsg = aiInput.value.trim();
     aiBody.innerHTML += `<div class="ai-msg ai-msg-user">${userMsg}</div>`;
@@ -157,7 +143,7 @@ aiInput.addEventListener('keydown', (e) => {
         response = "Xavier Cabrera is a full-stack beast — building apps with React, Node, and AI tech.";
       } else if (lower.includes("skills")) {
         response = "He knows HTML, CSS, JS, Python, React, MongoDB, AI, and more!";
-      } else if (lower.includes("motivate")) {
+      } else if (lower.includes("motivate") || lower.includes("motivation")) {
         response = "You’re not behind. You’re building your own lane. Keep going 🐐";
       } else if (lower.includes("projects")) {
         response = "Check the Projects section — Savy Bet Live, Quiz App, and more 🔥";
@@ -168,3 +154,98 @@ aiInput.addEventListener('keydown', (e) => {
     }, 500);
   }
 });
+// === Xavier Easter Egg Sequence Trigger ===
+let xavierKeys = [];
+const xavierCode = ['x', 'a', 'v', 'i', 'e', 'r'];
+
+window.addEventListener('keydown', (e) => {
+  xavierKeys.push(e.key.toLowerCase());
+  if (xavierKeys.slice(-6).toString() === xavierCode.toString()) {
+    activateDevTerminal();
+    xavierKeys = [];
+  }
+});
+
+// === Unlock Button Activation ===
+document.getElementById('unlockDevBtn')?.addEventListener('click', () => {
+  activateDevTerminal();
+});
+
+// === Dev Terminal Logic ===
+let commandBuffer = "";
+
+function activateDevTerminal() {
+  const terminal = document.getElementById('devTerminal');
+  const terminalText = document.getElementById('terminalText');
+  terminal.classList.add('active');
+  commandBuffer = "";
+  terminalText.innerHTML =
+    "Welcome to Dev Mode 🧠<br>" +
+    "Type a command or try:<br>" +
+    "- <code>help</code><br>" +
+    "- <code>projects</code><br>" +
+    "- <code>clear</code><br>" +
+    "- <code>exit</code><br><br>> ";
+}
+
+// Typing interaction inside terminal
+document.addEventListener('keydown', (e) => {
+  const terminal = document.getElementById('devTerminal');
+  const terminalText = document.getElementById('terminalText');
+  if (!terminal.classList.contains('active')) return;
+
+  if (e.key === "Escape") {
+    terminal.classList.remove('active');
+  } else if (e.key === "Enter") {
+    const command = commandBuffer.trim().toLowerCase();
+    terminalText.innerHTML += command + "<br>";
+    runCommand(command);
+    commandBuffer = "";
+  } else if (e.key === "Backspace") {
+    commandBuffer = commandBuffer.slice(0, -1);
+    updateTerminalLine();
+  } else if (e.key.length === 1) {
+    commandBuffer += e.key;
+    updateTerminalLine();
+  }
+
+  terminalText.scrollTop = terminalText.scrollHeight;
+});
+
+function updateTerminalLine() {
+  const terminalText = document.getElementById("terminalText");
+  const lines = terminalText.innerHTML.split("<br>");
+  lines[lines.length - 1] = `> ${commandBuffer}`;
+  terminalText.innerHTML = lines.join("<br>");
+}
+
+// Command handler
+function runCommand(cmd) {
+  const terminalText = document.getElementById("terminalText");
+
+  switch (cmd) {
+    case "help":
+      terminalText.innerHTML +=
+        "Available Commands:<br>" +
+        "- help<br>" +
+        "- projects<br>" +
+        "- clear<br>" +
+        "- exit<br>> ";
+      break;
+    case "projects":
+      terminalText.innerHTML +=
+        "Featured Projects:<br>" +
+        "- Savy Bet Live<br>" +
+        "- Connect 4 AI<br>" +
+        "- Grocery App<br>> ";
+      break;
+    case "clear":
+      terminalText.innerHTML = "> ";
+      break;
+    case "exit":
+      document.getElementById("devTerminal").classList.remove("active");
+      break;
+    default:
+      terminalText.innerHTML += `Unknown command: <code>${cmd}</code><br>> `;
+  }
+}
