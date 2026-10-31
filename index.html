@@ -1,549 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier Cabrera</title>
-    <link rel="icon" href="./favicon.png" type="image/png">
-    <link rel="stylesheet" href="./styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xavier Cabrera</title>
+  <meta name="description" content="Xavier Cabrera — full-stack and AI developer. Portfolio, work experience and projects.">
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <header></header>
+  <div id="scrollBar"></div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" id="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Xavier Cabrera</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="d-flex justify-content-end">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="#secondPart">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#skills">Professional Skills</a></li>
-              <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
-              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#top" class="nav-brand">XAVIER<span>.</span>CABRERA</a>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    <ul id="menu">
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="hero-img" data-parallax="0.25">
+        <img src="./crop.png" alt="Xavier Cabrera">
+      </div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-in" style="--d:.1s">Portfolio — 2026</p>
+        <h1 class="hero-title">
+          <span class="line"><span class="line-inner" style="--d:.2s">Xavier</span></span>
+          <span class="line"><span class="line-inner accent" style="--d:.35s">Cabrera</span></span>
+        </h1>
+        <p class="hero-sub hero-in" style="--d:.7s">Full-stack &amp; AI developer building things that think, read and ship.</p>
+        <div class="hero-actions hero-in" style="--d:.9s">
+          <a href="#featured" class="btn btn-solid">See latest project</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          <button id="musicToggle" class="btn btn-ghost" type="button">🎵 Play My Vibe</button>
+        </div>
+        <audio id="bgMusic" preload="none" loop>
+          <source src="./amanace.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="scroll-cue"><span>Scroll</span><i></i></div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Python</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>MongoDB</span><span>Computer Vision</span><span>Flask</span><span>Java</span><span>Swift</span><span>AI</span>
+        <span>Python</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>MongoDB</span><span>Computer Vision</span><span>Flask</span><span>Java</span><span>Swift</span><span>AI</span>
+      </div>
+    </div>
+
+    <!-- FEATURED PROJECT -->
+    <section id="featured" class="featured">
+      <div class="featured-grid">
+        <div class="featured-side">
+          <p class="eyebrow reveal">Featured project · Oct 2026 – Nov 2026</p>
+          <h2 class="display reveal">Savy<br>Electrical<br><em>Estimates</em></h2>
+          <p class="lead reveal">Plan takeoff, automated. Upload an electrical floor plan and get a priced estimate back — symbols found, wires measured, materials totaled.</p>
+          <p class="meta reveal"><strong>Meta Global AI Developer Hackathon</strong><br>Solo developer</p>
+          <div class="tags reveal">
+            <span>Python</span><span>Flask REST API</span><span>Computer Vision</span><span>Vision-Language Model</span><span>OCR</span><span>OpenCV</span><span>SVG</span><span>Playwright</span>
+          </div>
+          <div class="io reveal">
+            <div><b>In</b><span>PNG · JPG · PDF plans</span></div>
+            <div class="io-arrow">→</div>
+            <div><b>Out</b><span>Priced takeoff</span></div>
+          </div>
+        </div>
+
+        <div class="featured-steps">
+          <article class="step reveal">
+            <span class="step-n">01</span>
+            <h3>Reads the plan's own legend</h3>
+            <p>A hybrid computer-vision and vision-language-model pipeline converts electrical floor plans into priced takeoffs, reading each plan's own legend through structured JSON output.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-n">02</span>
+            <h3>Finds every symbol</h3>
+            <p>Multi-scale template matching with non-maximum suppression, plus rule-based filters — connected-component text-row detection and OCR checks — remove false positives like letters in room labels.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-n">03</span>
+            <h3>Traces the dashed wires</h3>
+            <p>A dashed-wire tracer built on color segmentation, union-find clustering and minimum-spanning-tree paths links switches to fixtures and measures runs in feet from a user-set scale.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-n">04</span>
+            <h3>Prices with receipts</h3>
+            <p>A search-grounded pricing step extracts part prices with source links and accepts a price only if it appears verbatim in the cited result, then totals materials, labor and contingency.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-n">05</span>
+            <h3>Human in the loop</h3>
+            <p>A review UI with SVG pan/zoom, pinch-to-zoom, retype/remove detections and hand-drawn runs, on a Flask REST API — verified end to end with Playwright tests.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="./IMG_5867.JPG" alt="Xavier Cabrera" data-parallax-img="0.08">
+        </div>
+        <div class="about-text">
+          <p class="eyebrow reveal">About</p>
+          <h2 class="display reveal">Code with<br><em>purpose.</em></h2>
+
+          <div class="tabs reveal">
+            <button class="tab active" data-tab="pro">Professional</button>
+            <button class="tab" data-tab="personal">Personal</button>
+          </div>
+
+          <div class="tab-panel active" id="tab-pro">
+            <p class="scrub">I'm Xavier Cabrera, a Computer Science graduate from Queens College, passionate about turning ideas into powerful full-stack and AI-powered web applications.</p>
+            <p class="scrub">From sports prediction platforms to real-time games and document-reading AI, I build with React, Node.js, MongoDB and Python — blending clean design with smart functionality.</p>
+            <p class="scrub">As a first-generation college student, I'm driven by more than code — I aim to uplift my family and community through meaningful, purpose-driven technology.</p>
+          </div>
+          <div class="tab-panel" id="tab-personal">
+            <p>Outside of coding I'm all about the Yankees, lifting heavy, UFC and boxing. I'm a huge fan of retro games — PS3 classics still hit hard — and I love storytelling, from exploring "what if" ideas to crafting creative projects that reflect my background.</p>
+            <p>Whether it's gaming, sports, or designing wild ideas, I stay inspired by fun, culture and making things that stand out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+      <p class="eyebrow reveal">Toolkit</p>
+      <h2 class="display reveal">Professional<br><em>Skills</em></h2>
+
+      <div class="skills-cols">
+        <div class="skills-col reveal">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python</li><li>JavaScript</li><li>Java</li><li>C++</li><li>Swift</li><li>HTML</li><li>CSS</li>
+          </ul>
+        </div>
+        <div class="skills-col reveal">
+          <h3>Frameworks &amp; Tools</h3>
+          <ul>
+            <li>React.js</li><li>Next.js</li><li>Flask</li><li>TensorFlow / PyTorch</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Bootstrap</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="sub-head reveal">Certifications</h3>
+      <div class="certs">
+        <article class="cert reveal">
+          <img src="./codepath.png" alt="CodePath logo">
+          <div><h4>CodePath</h4><p>Code Path Certification</p></div>
+        </article>
+        <article class="cert reveal">
+          <img src="./verizon.png" alt="Verizon logo">
+          <div><h4>Verizon Cloud Platform Job Simulation</h4><p>Forage Verizon Certification</p></div>
+        </article>
+        <article class="cert reveal">
+          <img src="./jp.png" alt="JP Morgan logo">
+          <div><h4>JP Morgan Software Engineering Job Simulation</h4><p>Forage JP Morgan Certification</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE (stacking panels) -->
+    <section id="experience" class="experience">
+      <div class="section-head">
+        <p class="eyebrow reveal">Work</p>
+        <h2 class="display reveal">Work<br><em>Experience</em></h2>
+      </div>
+
+      <div class="xp-stack">
+        <article class="xp-panel" style="--bg:#111">
+          <div class="xp-inner">
+            <span class="xp-n">01</span>
+            <p class="xp-when">Oct 2025 – Dec 2025</p>
+            <h3>AI Automation Engineer</h3>
+            <p class="xp-co">Wayfair (via Extern)</p>
+            <ul>
+              <li>Architected and deployed AI automation agents using Node.js and n8n to automate market trend analysis, competitor tracking, and marketing research workflows.</li>
+              <li>Reduced manual research workload by ~40% through automated data collection and processing pipelines.</li>
+              <li>Built structured data pipelines that converted unstructured market signals into dashboard-ready analytics for business stakeholders.</li>
+              <li>Delivered a live-updating analytics dashboard integrating AI-generated insights and competitive intelligence.</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </nav>
+        </article>
 
-    <main>
-      <div class="d-flex justify-content-center align-items-center text-center vh-100 pt-5" id="firstpart">
-        <div class="row w-75">
-          <div class="col-md-6 d-flex flex-column justify-content-center">
-            <h1 class="fw-bold">Hello! Im <span id="name">Xavier</span></h1>
-            <h2>Welcome to my portfolio!</h2>
-             <button id="musicToggle" class="btn btn-light mt-3">
-    🎵 Play My Vibe
-  </button>
-
-  <audio id="bgMusic" preload="auto" loop>
-    <source src="./amanace.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-            
+        <article class="xp-panel" style="--bg:#161616">
+          <div class="xp-inner">
+            <span class="xp-n">02</span>
+            <p class="xp-when">May 2025 – Jul 2025</p>
+            <h3>AI &amp; Automation Engineer</h3>
+            <p class="xp-co">Extern</p>
+            <ul>
+              <li>Designed AI-powered document processing pipelines using NLP, computer vision, PyMuPDF, and OCR on AWS.</li>
+              <li>Automated mortgage document classification and information extraction, reducing manual processing effort by 60%.</li>
+              <li>Built a Retrieval-Augmented Generation (RAG) search system using LlamaIndex for efficient document querying.</li>
+              <li>Conducted benchmarking of open-source AI models and delivered optimization recommendations adopted by the engineering team.</li>
+            </ul>
           </div>
-          <div class="col-md-6 text-center pb-1">
-            <img src="./crop.png" class="img-fluid rounded-4" alt="Graduation Photo">
+        </article>
+
+        <article class="xp-panel" style="--bg:#1b1b1b">
+          <div class="xp-inner">
+            <span class="xp-n">03</span>
+            <p class="xp-when">Jan 2025 – Apr 2025</p>
+            <h3>Software Engineer</h3>
+            <p class="xp-co">Ubiq</p>
+            <ul>
+              <li>Developed cross-platform mobile features using React Native and TypeScript for immersive 3D user interfaces.</li>
+              <li>Resolved 20+ critical bugs across mobile systems and improved application stability across iOS devices.</li>
+              <li>Implemented navigation and onboarding improvements that increased user satisfaction by 25%.</li>
+            </ul>
           </div>
-        </div>
+        </article>
+
+        <article class="xp-panel" style="--bg:#202020">
+          <div class="xp-inner">
+            <span class="xp-n">04</span>
+            <p class="xp-when">Jun 2024 – Dec 2024 · Queens, New York</p>
+            <h3>Software Engineer</h3>
+            <p class="xp-co">La Nueva Quisqueya Car Service Inc.</p>
+            <ul>
+              <li>Built a Python-based dispatch management system with PostgreSQL and Excel automation to optimize driver assignment workflows.</li>
+              <li>Reduced dispatch coordination time by 20% across a 20+ driver fleet.</li>
+              <li>Digitized legacy business data into a searchable database, improving reporting and record retrieval by 30%.</li>
+              <li>Collaborated directly with business stakeholders to gather requirements and deploy operational software solutions.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="xp-panel" style="--bg:#252525">
+          <div class="xp-inner">
+            <span class="xp-n">05</span>
+            <p class="xp-when">Jul 2023 – Present · Freelance</p>
+            <h3>Software Developer</h3>
+            <p class="xp-co">Fiverr</p>
+            <ul>
+              <li>Delivered diverse software projects, measured by client retention and satisfaction, with custom solutions in Java and Python.</li>
+              <li>Enhanced web applications — improving user experience and retention — using HTML, CSS and JavaScript to meet evolving customer needs.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="section-head">
+        <p class="eyebrow reveal">Work done</p>
+        <h2 class="display reveal">Selected<br><em>Projects</em></h2>
       </div>
 
-<!-- About Xavier Cabrera Section  -->
-<section class="about-section p-5" id="secondPart">
-  <div class="container">
-    <h2 class="text-black mb-4 text-center">About Me</h2>
+      <div class="proj-grid">
 
-    <div class="row align-items-center">
-      <!-- Image Column -->
-      <div class="col-md-5 text-center mb-4">
-        <img src="./IMG_5867.JPG" alt="Graduation Photo" class="img-fluid rounded-4 shadow mb-3" style="height: 50vh; width: auto;">
+        <article class="proj proj-wide reveal">
+          <span class="proj-n">01</span>
+          <span class="pill">Hackathon · Oct–Nov 2026</span>
+          <h3>Savy Electrical Estimates</h3>
+          <p>Hybrid computer-vision + vision-language-model pipeline that turns electrical floor plans into priced takeoffs — template matching, wire tracing, search-grounded pricing and a human-in-the-loop review UI.</p>
+          <div class="tags"><span>Python</span><span>Flask</span><span>OpenCV</span><span>VLM</span><span>OCR</span><span>Playwright</span></div>
+          <a href="#featured" class="proj-link">Read the breakdown →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">02</span>
+          <span class="pill live">In progress</span>
+          <h3>Savy Bet Live</h3>
+          <p>AI-powered sports prediction platform using player stats and real-time data.</p>
+          <a href="https://jumping-clay-law-527.vscodeedu.app/" target="_blank" rel="noopener" class="proj-link">View project →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">03</span>
+          <span class="pill">AI game</span>
+          <h3>AI Driven Connect 4</h3>
+          <p>A Connect 4 game powered by AI logic for smart competitive play.</p>
+          <a href="https://i.imgur.com/TXMq9ap.gif" target="_blank" rel="noopener" class="proj-link">Watch demo →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">04</span>
+          <span class="pill">May – Jun 2024</span>
+          <h3>Quiz App</h3>
+          <p>Full-stack quiz app with user login, countdown timer and score tracking stored in MongoDB.</p>
+          <div class="tags"><span>EJS</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span></div>
+          <a href="https://github.com/YoungSavy28/quiz-app" target="_blank" rel="noopener" class="proj-link">GitHub →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">05</span>
+          <span class="pill">Mar – May 2024</span>
+          <h3>Grocery App</h3>
+          <p>Android app to create and manage grocery lists, with login and database features built on SQL.</p>
+          <div class="tags"><span>Android Studio</span><span>Java</span><span>SQL</span><span>UX/UI</span></div>
+          <a href="https://github.com/YoungSavy28/glm" target="_blank" rel="noopener" class="proj-link">GitHub →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">06</span>
+          <span class="pill">Feb – Mar 2024</span>
+          <h3>TipMaster</h3>
+          <p>Tip calculator app focused on UX design, frontend/backend features and collaborative testing.</p>
+          <div class="tags"><span>Android Studio</span><span>Java</span><span>Mobile Dev</span><span>UX/UI</span></div>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">07</span>
+          <span class="pill">Aug 2023 – Feb 2024</span>
+          <h3>Internet Security — AWS Audit Tool</h3>
+          <p>Strengthened AWS infrastructure security using OWASP ZAP, compliance scans and log monitoring.</p>
+          <div class="tags"><span>OWASP ZAP</span><span>AWS</span><span>Security Auditing</span><span>Compliance</span></div>
+          <a href="https://docs.google.com/document/d/1Mg2hNpyi_YvMFjdOQlLFBcCc57uaaWusApRmjSokhtU/edit?usp=sharing" target="_blank" rel="noopener" class="proj-link">Read report →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">08</span>
+          <span class="pill">Oct 2023 – Jan 2024</span>
+          <h3>Pong Game</h3>
+          <p>Classic Pong in Python using Pygame, built with team collaboration.</p>
+          <div class="tags"><span>Python</span><span>Pygame</span><span>PyCharm</span><span>Teamwork</span></div>
+          <a href="https://github.com/YoungSavy28/Pong" target="_blank" rel="noopener" class="proj-link">GitHub →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">09</span>
+          <span class="pill">Oct – Dec 2023</span>
+          <h3>Reminders App</h3>
+          <p>Task and reminders app with a smooth UI, calendar features and local storage, built in Android Studio.</p>
+          <div class="tags"><span>Android Studio</span><span>Java</span><span>Database</span><span>UX</span></div>
+          <a href="https://github.com/YoungSavy28/rlm" target="_blank" rel="noopener" class="proj-link">GitHub →</a>
+        </article>
+
+        <article class="proj reveal">
+          <span class="proj-n">10</span>
+          <span class="pill">Aug – Oct 2021</span>
+          <h3>CodePath iOS Path</h3>
+          <p>Social app with unique features built using Swift and iOS development best practices.</p>
+          <div class="tags"><span>Swift</span><span>Xcode</span><span>iOS Dev</span><span>Teamwork</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <p class="eyebrow reveal">Contact</p>
+      <h2 class="mega reveal">Let's build<br><em>something.</em></h2>
+
+      <div class="contact-links reveal">
+        <a href="mailto:Xavier.Cabrera4528@gmail.com">Xavier.Cabrera4528@gmail.com</a>
+        <a href="tel:+13472380833">(347) 238-0833</a>
+        <a href="https://github.com/YoungSavy28" target="_blank" rel="noopener">github.com/YoungSavy28</a>
+        <a href="https://www.linkedin.com/in/xaviercabrera28/" target="_blank" rel="noopener">linkedin.com/in/xaviercabrera28</a>
       </div>
 
-      <!-- Text Column -->
-      <div class="col-md-7">
-        <div class="tab-content mb-4" id="aboutTabContent">
-          <!-- Professional Tab -->
-          <div class="tab-pane fade show active" id="professional" role="tabpanel">
-            <p>
-              I'm Xavier Cabrera, a Computer Science student at Queens College — graduating in June 2025 — passionate about turning ideas into powerful full-stack and AI-powered web applications.
-            </p>
-            <p>
-              From sports prediction platforms to real-time games, I build with React, Node.js, MongoDB, and Python — blending clean design with smart functionality and practical innovation.
-            </p>
-            <p>
-              As a first-generation college student, I’m driven by more than just code — I aim to uplift my family and community through meaningful, purpose-driven technology.
-            </p>
-          </div>
-          <div class="tab-content text-center mt-4" id="aboutTabContent">
-            <div class="tab-pane fade" id="hobbies" role="tabpanel">
-              <p>
-                Outside of coding, I’m all about the Yankees, lifting heavy, UFC and Boxing. I'm a huge fan of retro games (PS3 classics still hit hard) and I’m passionate about storytelling — from exploring ‘what if’ ideas to crafting creative projects that reflect my interests and background.
-              </p>
-              <p>
-                Whether it’s gaming, sports, or designing wild ideas, I stay inspired by fun, culture, and making things that stand out. I blend my hobbies with tech any chance I get.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tab Buttons -->
-        <ul class="nav nav-pills mb-3 d-flex align-items-center justify-content-evenly" id="aboutTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="professional-tab" data-bs-toggle="pill" data-bs-target="#professional" type="button" role="tab">
-              👨‍💻 Professional
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="hobbies-tab" data-bs-toggle="pill" data-bs-target="#hobbies" type="button" role="tab">
-              🎮 Personal
-            </button>
-          </li>
-        </ul>
+      <div id="easterEggHint" class="reveal">
+        <p>Psst... type <code>xavier</code> or click below to unlock dev mode 👀</p>
+        <button id="unlockDevBtn" class="btn btn-ghost" type="button">Unlock Terminal</button>
       </div>
-    </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Xavier Cabrera. All rights reserved.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- AI chat -->
+  <button id="aiIcon" aria-label="Open assistant">💬</button>
+  <div id="aiPanel">
+    <div id="aiHeader"><span>Dev Assistant</span><button id="aiClose" aria-label="Close">×</button></div>
+    <div id="aiBody"><div class="ai-msg ai-msg-bot">Hey! I'm here to help. Ask me anything about Xavier 🚀</div></div>
+    <div id="aiFooter"><input type="text" id="aiInput" placeholder="Type your question..."></div>
   </div>
-</section>
 
-
-
-
-      
-      
-    
-      <!-- Skills Section -->
-      <section id="skills">
-        <div class="container-fluid text-center pt-5">
-          <h2>Professional Skills</h2>
-          <div class="tab-content">
-             <ul class="nav nav-pills mb-3 p-4 d-flex align-items-center justify-content-evenly " id="aboutTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="programmingLanguage-tab" data-bs-toggle="pill" data-bs-target="#programmingLanguage" type="button" role="tab">
-          👨‍💻 Languages
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="framewrk-tab" data-bs-toggle="pill" data-bs-target="#framewrk" type="button" role="tab">
-          🛠️ Frame Works & Tools
-        </button>
-      </li>
-    </ul>
+  <!-- Dev terminal -->
+  <div id="devTerminal">
+    <pre id="terminalText"></pre>
+    <input type="text" id="terminalInputFix" autocomplete="off" autocapitalize="off" spellcheck="false">
   </div>
-  
-     <!-- Tab Content Wrapped in Container -->
-<div class="container-fluid mt-5 db-flex pt-2 pb-2" id="un">
-  <div class="tab-content   mb-5 rounded text-center" id="aboutTabContent">
-    <div class="tab-pane fade show active container d-flex flex-wrap justify-content-center gap-2" id="programmingLanguage" role="tabpanel">
 
-  <div class="row">
-    <div class="col">
-      <span class="badge text-bg-primary">HTML</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Python</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">CSS</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">JavaScript</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Java</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">C++</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Swift</span>
-    </div>
-
-  </div>
-</div>
-      
-    </div>
-
-    <div class="tab-pane fade" id="framewrk" role="tabpanel">
-      <div class="tab-content   mb-5 rounded text-center" id="aboutTabContent">
-    <div class="tab-pane fade show active container d-flex flex-wrap justify-content-center gap-2" id="framewrk" role="tabpanel">
-      <div class="row">
-        <div class="col">
-      <span class="badge text-bg-primary">React.js</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Next.js</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Bootstrap</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">TensorFlow / PyTorch</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Pandas </span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">NumPy</span>
-    </div>
-    <div class="col">
-      <span class="badge text-bg-primary">Matplotlib</span>
-    </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div>
-      
- <div class="container-fluid mt-4">
-  <div class="row justify-content-center">
-
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 100%;">
-        <img src="./codepath.png" class="card-img-top" alt="CodePath logo">
-        <div class="card-body text-bg-primary">
-          <h5 class="card-title">CodePath</h5>
-          <p class="card-text">Code Path Certification</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 100%;">
-        <img src="./verizon.png" class="card-img-top" alt="Verizon logo">
-        <div class="card-body text-bg-primary">
-          <h5 class="card-title">Verizon Cloud Platform Job Simulation</h5>
-          <p class="card-text">Forage Verizon Certification</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 100%;">
-        <img src="./jp.png" class="card-img-top" alt="JP Morgan logo">
-        <div class="card-body text-bg-primary">
-          <h5 class="card-title">JP Morgan Software Engineering Job Simulation</h5>
-          <p class="card-text">Forage JP Morgan Certification</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-  </div>
-        
-      </section>
-      </div>
-     </div>
-      <!-- Experience Section -->
-<section id="experience">
-  <div class="container-fluid py-5">
-    <h2 class="text-center mb-5">Experience</h2>
-
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-
-        <!-- Outamation -->
-        <div class="mb-5">
-          <div class="d-flex align-items-center mb-2">
-            <div class="bg-primary text-white rounded-circle p-3 me-3 fw-bold">1</div>
-            <h3 class="mb-0">AI and Automation Extern, Outamation</h3>
-          </div>
-          <p><em>Extern | May 2025 – Jul 2025 | Remote</em></p>
-          <ul>
-            <li>Built AI-powered workflows to automate document classification and data extraction, using Natural Language Processing (NLP), Computer Vision, and Python-based pipelines (PyMuPDF, OCR techniques).</li>
-            <li>Developed a retrieval system with LlamaIndex and Retrieval-Augmented Generation (RAG) to improve information search accuracy across mortgage documents, while evaluating open-source AI models for performance optimization.</li>
-            <li>Synthesized technical findings by compiling a comprehensive analysis report on top AI models for document processing, highlighting key challenges, optimization strategies, and real-world deployment recommendations.</li>
-          </ul>
-        </div>
-
-        <!-- Fiverr -->
-        <div class="mb-5">
-          <div class="d-flex align-items-center mb-2">
-            <div class="bg-primary text-white rounded-circle p-3 me-3 fw-bold">2</div>
-            <h3 class="mb-0">Fiverr</h3>
-          </div>
-          <p><em>Software Developer | Jul 2023 – Present | Freelancer</em></p>
-          <ul>
-            <li>Accomplished delivery of diverse software projects as measured by client retention and satisfaction, by developing custom solutions in Java and Python.</li>
-            <li>Enhanced web applications, improving user experience and retention rates, by leveraging HTML, CSS, and JavaScript to meet evolving customer needs.</li>
-          </ul>
-        </div>
-
-        <!-- Ubiq -->
-        <div class="mb-5">
-          <div class="d-flex align-items-center mb-2">
-            <div class="bg-primary text-white rounded-circle p-3 me-3 fw-bold">3</div>
-            <h3 class="mb-0">Ubiq</h3>
-          </div>
-          <p><em>Ubiq Insider Program | Software Development & UX/UI Collaboration | Jan 2025 – Apr 2025</em></p>
-          <ul>
-            <li>Enhanced Ubiq's spatial media platform capabilities and user engagement by completing an intensive program.</li>
-            <li>Tested immersive 3D interfaces, enhancing user interaction and interface reliability.</li>
-            <li>Proposed and implemented improvements from agile UX/UI workshops, increasing user satisfaction and simplifying navigation.</li>
-            <li>Worked cross-functionally with designers and engineers to enhance application stability and user experience.</li>
-          </ul>
-        </div>
-
-        <!-- La Nueva Quisqueya -->
-        <div class="mb-5">
-          <div class="d-flex align-items-center mb-2">
-            <div class="bg-primary text-white rounded-circle p-3 me-3 fw-bold">4</div>
-            <h3 class="mb-0">La Nueva Quisqueya Car Service Inc.</h3>
-          </div>
-          <p><em>Technology Consultant | Jun 2024 – Dec 2024 | Queens, New York</em></p>
-          <ul>
-            <li>Modernized dispatch operations by researching and advising on software solutions to improve driver coordination and reduce customer wait times.</li>
-            <li>Assisted in the digitization of customer records and trip data, using Excel and Python scripts to streamline data entry and reporting processes.</li>
-            <li>Automated manual data entry processes using Python scripts, increasing efficiency in managing customer records and trip data.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Projects Section -->
-<section id="projects" class="p-5 bg-light">
-  <div class="container-fluid">
-    <h2 class="text-center mb-5">Projects</h2>
-    <div class="row justify-content-center gy-4">
-
-      <div class="col-md-6 col-lg-4">
-  <div class="card shadow h-100">
-    <div class="card-body text-center">
-      <h5 class="card-title text-center">Quiz App <span class="text-muted small">(May 2024 – Jun 2024)</span></h5>
-      <p class="card-text text-center">Full-stack quiz app with user login, countdown timer, and score tracking stored in MongoDB.</p>
-      <a href="https://github.com/YoungSavy28/quiz-app" target="_blank" class="btn btn-outline-primary mb-2">GitHub</a>
-      <div class="d-flex flex-wrap justify-content-center gap-2">
-        <span class="badge bg-primary">EJS</span>
-        <span class="badge bg-primary">CSS</span>
-        <span class="badge bg-primary">JavaScript</span>
-        <span class="badge bg-primary">Node.js</span>
-        <span class="badge bg-primary">MongoDB</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">Savy Bet Live (in process) <span class="badge text-bg-danger ">Under Construction</span></h5>
-            <p class="card-text">
-              AI-powered sports prediction platform using player stats and real-time data.
-            </p>
-            <a href="https://jumping-clay-law-527.vscodeedu.app/" target="_blank" class="btn btn-outline-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">AI Driven Connect 4 <span class="bg badge "></span></h5>
-            <p class="card-text">A Connect 4 game powered by AI logic for smart competitive play.</p>
-            <a href="https://i.imgur.com/TXMq9ap.gif" target="_blank" class="btn btn-outline-primary">Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Grocery App -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title text-center">Grocery App <span class="text-muted small">(Mar 2024 – May 2024)</span></h5>
-            <p class="card-text text-center">Android app to create and manage grocery lists. Built login and database features using SQL.</p>
-            <a href="https://github.com/YoungSavy28/glm" target="_blank" class="btn btn-outline-primary mb-2">GitHub</a>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary">Android Studio</span>
-              <span class="badge bg-primary">Java</span>
-              <span class="badge bg-primary">SQL</span>
-              <span class="badge bg-primary">Frontend</span>
-              <span class="badge bg-primary">UX/UI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TipMaster -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title text-center">TipMaster <span class="text-muted small">(Feb 2024 – Mar 2024)</span></h5>
-            <p class="card-text text-center">Tip calculator app focused on UX design, frontend/backend features, and collaborative testing.</p>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary">Android Studio</span>
-              <span class="badge bg-primary">Java</span>
-              <span class="badge bg-primary">Mobile Dev</span>
-              <span class="badge bg-primary">UX/UI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AWS Audit Tool -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title text-center">Internet Security (AWS Audit Tool) <span class="text-muted small">(Aug 2023 – Feb 2024)</span></h5>
-            <p class="card-text text-center">Strengthened AWS infrastructure security using OWASP ZAP, compliance scans, and log monitoring.</p>
-            <a href="https://docs.google.com/document/d/1Mg2hNpyi_YvMFjdOQlLFBcCc57uaaWusApRmjSokhtU/edit?usp=sharing" target="_blank" class="btn btn-outline-primary mb-2">Report</a>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary">OWASP ZAP</span>
-              <span class="badge bg-primary">AWS</span>
-              <span class="badge bg-primary">Security Auditing</span>
-              <span class="badge bg-primary">Compliance</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pong Game -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">Pong Game <span class="text-muted small">(Oct 2023 – Jan 2024)</span></h5>
-            <p class="card-text">Created a classic Pong game in Python using Pygame with team collaboration.</p>
-            <a href="https://github.com/YoungSavy28/Pong" target="_blank" class="btn btn-outline-primary mb-2">GitHub</a>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary">Python</span>
-              <span class="badge bg-primary">Pygame</span>
-              <span class="badge bg-primary">PyCharm</span>
-              <span class="badge bg-primary">Teamwork</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Reminders App -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title text-center">Reminders App <span class="text-muted small">(Oct 2023 – Dec 2023)</span></h5>
-            <p class="card-text text-center">Built a task and reminders app with a smooth UI, calendar features, and storage using Android Studio.</p>
-            <a href="https://github.com/YoungSavy28/rlm" target="_blank" class="btn btn-outline-primary mb-2">GitHub</a>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary">Android Studio</span>
-              <span class="badge bg-primary">Java</span>
-              <span class="badge bg-primary">Mobile App</span>
-              <span class="badge bg-primary">UX</span>
-              <span class="badge bg-primary">Database</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- iOS App -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title text-center">CodePath iOS Path <span class="text-muted small">(Aug 2021 – Oct 2021)</span></h5>
-            <p class="card-text text-center">Built a social app with unique features using Swift and iOS development best practices.</p>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary">Swift</span>
-              <span class="badge bg-primary">Xcode</span>
-              <span class="badge bg-primary">iOS Dev</span>
-              <span class="badge bg-primary">Teamwork</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-      
-
-     <!-- Contact Section -->
-<section id="contact" class="py-5 bg-light">
-  <div class="container-fluid">
-    <h2 class="text-center mb-4">Contact</h2>
-    <div class="text-center">
-      <p><a href="mailto:Xavier.Cabrera4528@gmail.com" target="_blank" class="d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
-  <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
-  <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
-</svg>
-        Xavier.Cabrera4528@gmail.com</a></p>
-      <p><a href="tel:+13472380833"target="_blank" class="d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-</svg>
-        (347) 238-0833</a></p>
-      <p>
-      <a href="https://github.com/YoungSavy28" target="_blank" class="d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-</svg>
-        github.com/YoungSavy28
-      </a>
-    </p>
-      <p><a href="https://www.linkedin.com/in/xaviercabrera28/" target="_blank" class="d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-</svg>
-        linkedin.com/in/xaviercabrera28</a></p>
-    </div>
-  </div>
-<!-- 🔓 Dev Terminal Unlock Section -->
-<div id="easterEggHint" class="text-center py-5">
-  <p class="text-muted">Psst... type <code>xavier</code> or click below to unlock dev mode 👀</p>
-  <button id="unlockDevBtn" class="btn btn-outline-dark rounded-pill px-4 py-2">Unlock Terminal</button>
-</div>
-
-
-</section>
-  
-
-    </main>
-
-    <footer class="text-center py-4">
-      <p class="mb-0">© 2024 Xavier Cabrera. All rights reserved.</p>
-      </footer>
-    <!-- AI Assistant Modern Chat -->
-<div id="aiIcon">💬</div>
-
-<div id="aiPanel">
-  <div id="aiHeader">
-    <span>Dev Assistant</span>
-    <button id="aiClose">×</button>
-  </div>
-  <div id="aiBody">
-    <div class="ai-msg ai-msg-bot">Hey! I'm here to help. Ask me anything about Xavier 🚀</div>
-  </div>
-  <div id="aiFooter">
-    <input type="text" id="aiInput" placeholder="Type your question..." />
-  </div>
-</div>
-<!-- Dev Terminal Easter Egg (DEVGOD Unlock) -->
-<div id="devTerminal">
-  <pre id="terminalText"><span class="cursor">█</span></pre>
-  <input type="text" id="terminalInputFix" style="position:absolute; opacity:0; height:1px; width:1px; z-index:-1;" />
-
-</div>
-
-     
-    <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
