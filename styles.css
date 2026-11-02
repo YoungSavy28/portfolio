@@ -1,4 +1,3 @@
-
 :root {
   --bg: #0a0a0a;
   --bg-2: #111;
@@ -353,3 +352,7 @@ footer { padding-bottom: max(1.75rem, env(safe-area-inset-bottom)); }
   .marquee-track { animation: none; }
   .scrub .w { color: var(--fg); }
 }
+
+/* Featured project GitHub button */
+.featured-cta { margin-top: 2rem; }
+.proj-wide .proj-link + .proj-link { margin-top: -0.25rem; }
