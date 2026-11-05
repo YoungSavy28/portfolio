@@ -171,7 +171,7 @@ aiInput.addEventListener('keydown', (e) => {
     } else if (lower.includes('motivat')) {
       response = "You're not behind. You're building your own lane. Keep going 🐐";
     } else if (lower.includes('project')) {
-      response = 'Check the Featured section for Savy Electrical Estimates, then the Projects grid — Savy Bet Live, Quiz App, and more 🔥';
+      response = 'Check the Featured section for Savy Electrical Estimates, then the Projects grid — Savy Circuit Lab, Savy Bet Live, Quiz App, and more 🔥';
     } else if (lower.includes('xavier')) {
       response = 'Xavier Cabrera is a full-stack and AI developer — React, Node, Python, and computer vision.';
     }
@@ -208,7 +208,7 @@ function runCommand(cmd) {
     case 'help':
       termHistory += 'Available Commands:\n- help\n- projects\n- skills\n- clear\n- exit\n\n'; break;
     case 'projects':
-      termHistory += 'Featured Projects:\n- Savy Electrical Estimates\n- Savy Bet Live\n- Connect 4 AI\n- Grocery App\n\n'; break;
+      termHistory += 'Featured Projects:\n- Savy Electrical Estimates\n- Savy Circuit Lab\n- Savy Bet Live\n- Connect 4 AI\n- Grocery App\n\n'; break;
     case 'skills':
       termHistory += 'Python · JavaScript · Java · C++ · Swift · React · Flask · Computer Vision\n\n'; break;
     case 'clear':

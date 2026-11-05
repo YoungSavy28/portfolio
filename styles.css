@@ -1,3 +1,4 @@
+/* ============ TOKENS ============ */
 :root {
   --bg: #0a0a0a;
   --bg-2: #111;
@@ -356,3 +357,6 @@ footer { padding-bottom: max(1.75rem, env(safe-area-inset-bottom)); }
 /* Featured project GitHub button */
 .featured-cta { margin-top: 2rem; }
 .proj-wide .proj-link + .proj-link { margin-top: -0.25rem; }
+
+/* Multiple links on one project card */
+.proj-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
